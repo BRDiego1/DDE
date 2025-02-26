@@ -14,10 +14,10 @@
    <children>
 
       <!-- Botón para cargar archivo -->
-      <Button fx:id="loadFileButton" layoutX="508.0" layoutY="437.0" style="-fx-background-color: rgb(165,127,44); -fx-text-fill: #002147; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Cargar Excel" />
+      <Button fx:id="loadFileButton" layoutX="611.0" layoutY="437.0" style="-fx-background-color: rgb(106,4,48); -fx-text-fill: #fcf9f9; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Cargar Excel" textFill="#fcf9f9" />
 
       <!-- Tabla de datos -->
-      <TableView fx:id="table" layoutX="23.0" layoutY="63.0" prefHeight="361.0" prefWidth="674.0" style="-fx-background-color: white; -fx-border-color: rgb(165,127,44); -fx-border-width: 2px;">
+      <TableView fx:id="table" layoutX="23.0" layoutY="63.0" prefHeight="368.0" prefWidth="674.0" style="-fx-background-color: white; -fx-border-color: rgb(106,4,48); -fx-border-width: 2px;">
          <columns>
             <TableColumn fx:id="nombreColumn" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Nombre">
                <cellValueFactory>
@@ -32,10 +32,7 @@
             </TableColumn>
          </columns>
       </TableView>
-
-      <!-- Botón para iniciar archivo -->
-      <Button layoutX="601.0" layoutY="437.0" style="-fx-background-color: rgb(165,127,44); -fx-text-fill: #002147; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Iniciar archivo" />
-      <Button layoutX="23.0" layoutY="437.0" mnemonicParsing="false" onAction="#goAdmin" style="-fx-background-color: rgb(165,127,44); -fx-text-fill: #002147; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Panel Administrador" />
+      <Button layoutX="23.0" layoutY="437.0" mnemonicParsing="false" onAction="#goAdmin" style="-fx-background-color: rgb(106,4,48); -fx-text-fill: #fcf9f9; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Panel Administrador" textFill="WHITE" />
       <AnchorPane layoutY="-2.0" prefHeight="61.0" prefWidth="720.0" style="-fx-background-color: rgb(106,4,48);">
          <children>
             <!-- Título -->

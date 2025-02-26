@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="516.0" prefWidth="756.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.HomeAdmin">
+<AnchorPane prefHeight="516.0" prefWidth="756.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.HomeAdminController">
    <children>
       <Button layoutX="515.0" layoutY="73.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: rgb(97,18,50);" text="Eliminar" textFill="WHITE">
          <graphic>
@@ -28,7 +28,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="653.0" layoutY="474.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: rgb(97,18,50);" text="Imprimir" textFill="WHITE">
+      <Button layoutX="644.0" layoutY="474.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Imprimir" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -36,7 +36,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="14.0" layoutY="474.0" mnemonicParsing="false" style="-fx-background-color: rgb(97,18,50);" text="Ver Panel de Usuario" textFill="WHITE">
+      <Button layoutX="14.0" layoutY="474.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="151.0" style="-fx-background-color: rgb(97,18,50);" text="Panel de Usuario" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -64,6 +64,15 @@
             <ImageView fitHeight="21.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../image/personas.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="loadFileButton" layoutX="321.0" layoutY="473.0" prefHeight="29.0" prefWidth="114.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Cargar Excel">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/expediente.png" />
                </image>
             </ImageView>
          </graphic>
