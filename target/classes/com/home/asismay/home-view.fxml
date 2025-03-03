@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="720.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="720.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.HomeController">
    <children>
 
       <!-- Botón para cargar archivo -->
@@ -32,18 +32,26 @@
             </TableColumn>
          </columns>
       </TableView>
-      <Button layoutX="23.0" layoutY="437.0" mnemonicParsing="false" onAction="#goAdmin" style="-fx-background-color: rgb(106,4,48); -fx-text-fill: #fcf9f9; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Panel Administrador" textFill="WHITE" />
-      <AnchorPane layoutY="-2.0" prefHeight="61.0" prefWidth="720.0" style="-fx-background-color: rgb(106,4,48);">
+
+      <!-- Botón Panel Administrador con fx:id -->
+      <Button fx:id="adminButton" layoutX="23.0" layoutY="437.0" mnemonicParsing="false" onAction="#goAdmin" style="-fx-background-color: rgb(106,4,48); -fx-text-fill: #fcf9f9; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Panel Administrador" textFill="WHITE" />
+
+      <AnchorPane layoutY="-2.0" prefHeight="62.0" prefWidth="720.0" style="-fx-background-color: linear-gradient(to right, rgb(220, 180, 180), rgb(180, 50, 80), rgb(140, 10, 60), rgb(106,4,48));">
          <children>
             <!-- Título -->
-            <Text fill="WHITE" layoutX="190.0" layoutY="50.0" style="-fx-font-family: Montserrat, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;" text="Panel de Registro">
+            <Text fill="#0d0d0d" layoutX="179.0" layoutY="49.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Panel de Registro">
                <font>
                   <Font size="44.0" />
                </font>
             </Text>
             <ImageView fitHeight="61.0" fitWidth="150.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../image/logo_blanco.png" />
+                  <Image url="@../../../image/SEMAR_Logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="59.0" fitWidth="70.0" layoutX="661.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/emblema1.png" />
                </image>
             </ImageView>
          </children>

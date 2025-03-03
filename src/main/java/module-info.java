@@ -12,6 +12,8 @@ module com.home.asismay {
     requires com.almasb.fxgl.all;
     requires org.apache.poi.ooxml;
     requires java.desktop;
+    requires java.sql;
+    requires jbcrypt;
 
     opens com.home.asismay to javafx.fxml;
     exports com.home.asismay;

@@ -125,10 +125,9 @@ public class HomeController {
         }
     }
 
-    // Método para cambiar de escena sin restricción de usuario administrador
     public void goAdmin(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeAdmin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
