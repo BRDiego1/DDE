@@ -11,6 +11,7 @@ import javafx.scene.Node;
 
 import java.io.IOException;
 import java.sql.*;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class LoginController {
 
@@ -46,17 +47,22 @@ public class LoginController {
     }
 
     private String getUserRole(String username, String password) {
-        String sql = "SELECT puesto FROM users WHERE usuario = ? AND contraseña = ?";
+        String sql = "SELECT puesto, contraseña FROM users WHERE usuario = ?";
 
         try (Connection conn = DatabaseConnection.connect();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, username);
-            stmt.setString(2, password);
-
             ResultSet rs = stmt.executeQuery();
+
             if (rs.next()) {
-                return rs.getString("puesto"); // Devuelve "admin" o "superadmin"
+                String hashedPassword = rs.getString("contraseña");
+                String puesto = rs.getString("puesto");
+
+                // Verificar la contraseña encriptada
+                if (BCrypt.checkpw(password, hashedPassword)) {
+                    return puesto; // Devuelve "admin" o "superadmin"
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,8 +81,6 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-
-
 
     @FXML
     private void goHome(ActionEvent event) {

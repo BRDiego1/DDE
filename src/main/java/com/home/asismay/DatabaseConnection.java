@@ -54,28 +54,6 @@ public class DatabaseConnection {
         }
     }
 
-    // Crear tabla para la configuración de retardos
-    public static void createTableRetardo() {
-        try (Connection connection = connect()) {
-            if (connection != null) {
-                Statement stmt = connection.createStatement();
-                String sql = "CREATE TABLE IF NOT EXISTS configuracion_retardo (" +
-                        "id INT PRIMARY KEY AUTO_INCREMENT," +
-                        "tipo_retardo VARCHAR(255) NOT NULL," +  // Tipo de retardo, por ejemplo, "Tardanza leve"
-                        "tiempo_retardo INT NOT NULL," +        // Tiempo en minutos para considerar retardo
-                        "tiempo_no_asistencia INT NOT NULL," +  // Tiempo en minutos para considerar no asistencia
-                        "configurado_por INT NOT NULL," +       // ID del superadmin que configuró
-                        "FOREIGN KEY (configurado_por) REFERENCES users(id) ON DELETE CASCADE" +
-                        ")";
-                stmt.executeUpdate(sql);
-                System.out.println("Tabla 'configuracion_retardo' creada (si no existía)");
-            }
-        } catch (SQLException e) {
-            System.out.println("Error al crear la tabla de configuracion_retardo.");
-            e.printStackTrace();
-        }
-    }
-
     // Método para verificar si el usuario ya existe
     public static boolean existeUsuario(String usuario) {
         String sql = "SELECT COUNT(*) FROM users WHERE usuario = ?";
@@ -154,99 +132,132 @@ public class DatabaseConnection {
         }
     }
 
-    // Insertar configuración de retardo
-    public static void insertConfiguracionRetardo(String tipoRetardo, int tiempoRetardo, int tiempoNoAsistencia, int superadminId) {
-        String sql = "INSERT INTO configuracion_retardo (tipo_retardo, tiempo_retardo, tiempo_no_asistencia, configurado_por) " +
-                "VALUES (?, ?, ?, ?)";
+    public static void updateUser(int id, String usuario, String email, String contraseña, String puesto) {
+        String sql = "UPDATE users SET usuario = ?, email = ?, contraseña = ?, puesto = ? WHERE id = ?";
 
         try (Connection connection = connect();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
-            stmt.setString(1, tipoRetardo);
-            stmt.setInt(2, tiempoRetardo);
-            stmt.setInt(3, tiempoNoAsistencia);
-            stmt.setInt(4, superadminId);
+            stmt.setString(1, usuario);
+            stmt.setString(2, email);
+            stmt.setString(3, contraseña);
+            stmt.setString(4, puesto);
+            stmt.setInt(5, id);
 
             stmt.executeUpdate();
-            System.out.println("Configuración de retardo guardada correctamente");
+            System.out.println("Usuario actualizado correctamente");
 
         } catch (SQLException e) {
-            System.out.println("Error al guardar configuración de retardo.");
+            System.out.println("Error al actualizar usuario.");
             e.printStackTrace();
         }
     }
 
-    // Actualizar configuración de retardo
-    public static void updateConfiguracionRetardo(int id, String tipoRetardo, int tiempoRetardo, int tiempoNoAsistencia, int superadminId) {
-        String sql = "UPDATE configuracion_retardo SET tipo_retardo = ?, tiempo_retardo = ?, tiempo_no_asistencia = ?, configurado_por = ? " +
-                "WHERE id = ?";
+    public static void deleteUser(int id) {
+        String sql = "DELETE FROM users WHERE id = ?";
 
         try (Connection connection = connect();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
-            stmt.setString(1, tipoRetardo);
-            stmt.setInt(2, tiempoRetardo);
-            stmt.setInt(3, tiempoNoAsistencia);
-            stmt.setInt(4, superadminId);  // El ID del superadmin que lo configuró
-            stmt.setInt(5, id);            // El ID del tipo de retardo que se quiere modificar
-
+            stmt.setInt(1, id);
             stmt.executeUpdate();
-            System.out.println("Tipo de retardo actualizado correctamente");
+            System.out.println("Usuario eliminado correctamente");
 
         } catch (SQLException e) {
-            System.out.println("Error al actualizar el tipo de retardo.");
+            System.out.println("Error al eliminar usuario.");
             e.printStackTrace();
         }
     }
 
-    // Eliminar configuración de retardo
-    public static void deleteConfiguracionRetardo(int id) {
-        String sql = "DELETE FROM configuracion_retardo WHERE id = ?";
+    public static void deleteAllUsers() {
+        String sql = "DELETE FROM users";
 
         try (Connection connection = connect();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
-            stmt.setInt(1, id);  // El ID del tipo de retardo que se quiere eliminar
-
             stmt.executeUpdate();
-            System.out.println("Tipo de retardo eliminado correctamente");
+            System.out.println("Todos los usuarios han sido eliminados");
 
         } catch (SQLException e) {
-            System.out.println("Error al eliminar el tipo de retardo.");
+            System.out.println("Error al eliminar todos los usuarios.");
             e.printStackTrace();
         }
     }
 
-    // Obtener todas las configuraciones de retardo
-    public static void obtenerConfiguracionesRetardo() {
-        String sql = "SELECT * FROM configuracion_retardo";
+    public static ResultSet obtenerUsuarios() {
+        String sql = "SELECT id, usuario, email, puesto FROM users";
 
-        try (Connection connection = connect();
-             Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String tipoRetardo = rs.getString("tipo_retardo");
-                int tiempoRetardo = rs.getInt("tiempo_retardo");
-                int tiempoNoAsistencia = rs.getInt("tiempo_no_asistencia");
-                int configuradoPor = rs.getInt("configurado_por");
-
-                System.out.println("ID: " + id + ", Tipo Retardo: " + tipoRetardo +
-                        ", Tiempo Retardo: " + tiempoRetardo + " min" +
-                        ", Tiempo No Asistencia: " + tiempoNoAsistencia + " min" +
-                        ", Configurado por: " + configuradoPor);
+        try {
+            Connection connection = connect();
+            if (connection != null) {
+                PreparedStatement stmt = connection.prepareStatement(sql);
+                return stmt.executeQuery();
             }
-
         } catch (SQLException e) {
-            System.out.println("Error al obtener las configuraciones de retardo.");
+            System.out.println("Error al obtener usuarios.");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // Crear tabla dinámica a partir de los encabezados del Excel
+    public static void createTableFromExcel(String tableName, String[] columns) {
+        try (Connection connection = connect()) {
+            if (connection != null) {
+                Statement stmt = connection.createStatement();
+
+                // Crear la sentencia SQL para crear la tabla
+                StringBuilder sql = new StringBuilder("CREATE TABLE IF NOT EXISTS " + tableName + " (");
+                for (String column : columns) {
+                    sql.append(column).append(" VARCHAR(255), ");
+                }
+                sql.delete(sql.length() - 2, sql.length());  // Eliminar la última coma y espacio
+                sql.append(");");
+
+                stmt.executeUpdate(sql.toString());
+                System.out.println("Tabla '" + tableName + "' creada exitosamente.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al crear la tabla.");
             e.printStackTrace();
         }
     }
+
+    // Insertar datos desde Excel a la base de datos
+    public static void insertData(String tableName, String[] columns, String[][] data) {
+        try (Connection connection = connect()) {
+            if (connection != null) {
+                StringBuilder sql = new StringBuilder("INSERT INTO " + tableName + " (");
+                for (String column : columns) {
+                    sql.append(column).append(", ");
+                }
+                sql.delete(sql.length() - 2, sql.length()); // Eliminar la última coma y espacio
+                sql.append(") VALUES ");
+
+                // Agregar los valores a insertar
+                for (String[] row : data) {
+                    sql.append("(");
+                    for (String value : row) {
+                        sql.append("'").append(value).append("', ");
+                    }
+                    sql.delete(sql.length() - 2, sql.length()); // Eliminar la última coma y espacio
+                    sql.append("), ");
+                }
+                sql.delete(sql.length() - 2, sql.length()); // Eliminar la última coma y espacio
+
+                Statement stmt = connection.createStatement();
+                stmt.executeUpdate(sql.toString());
+                System.out.println("Datos insertados exitosamente en la tabla '" + tableName + "'");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     public static void main(String[] args) {
         createDatabase();
         createTable();
-        createTableRetardo();
     }
 }

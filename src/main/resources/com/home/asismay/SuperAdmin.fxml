@@ -23,7 +23,7 @@
          </items>
       </ComboBox>
 
-      <Button layoutX="487.0" layoutY="68.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: rgb(97,18,50);" text="Eliminar" textFill="WHITE">
+      <Button layoutX="502.0" layoutY="77.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Eliminar" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -34,9 +34,9 @@
       </Button>
 
       <!-- TableView for displaying data from Excel -->
-      <TableView fx:id="tableView" layoutX="11.0" layoutY="118.0" prefHeight="369.0" prefWidth="717.0" />
+      <TableView fx:id="tableView" layoutX="10.0" layoutY="129.0" prefHeight="369.0" prefWidth="717.0" />
 
-      <Button layoutX="603.0" layoutY="68.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="107.0" style="-fx-background-color: rgb(97,18,50);" text="Actualizar" textFill="WHITE">
+      <Button layoutX="616.0" layoutY="77.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="107.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Actualizar" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -76,7 +76,7 @@
          </children>
       </AnchorPane>
 
-      <Button fx:id="loadFileButton" layoutX="487.0" layoutY="507.0" prefHeight="29.0" prefWidth="114.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Cargar Excel">
+      <Button fx:id="loadFileButton" layoutX="494.0" layoutY="507.0" prefHeight="29.0" prefWidth="114.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Cargar Excel">
          <graphic>
             <ImageView fitHeight="19.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -86,7 +86,14 @@
          </graphic>
       </Button>
 
-      <Button layoutX="181.0" layoutY="507.0" mnemonicParsing="false" onAction="#goRegisterAdmin" prefHeight="29.0" prefWidth="140.0" style="-fx-background-color: rgb(97,18,50); -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: -fx-font-family;" text="Registrar Admins" textFill="WHITE" />
+      <Button layoutX="181.0" layoutY="507.0" mnemonicParsing="false" onAction="#goRegisterAdmin" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: rgb(97,18,50); -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: -fx-font-family;" text="Registrar Admins" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/agregar-usuario.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Button fx:id="loadFileButton1" layoutX="348.0" layoutY="507.0" prefHeight="29.0" prefWidth="126.0" style="-fx-background-color: rgb(106,4,48); -fx-text-fill: #fcf9f9; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Load Database" textFill="#fcf9f9">
          <graphic>
             <ImageView fitHeight="21.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
@@ -95,6 +102,13 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="14.0" layoutY="71.0" mnemonicParsing="false" onAction="#goConfigAsis" style="-fx-background-color: rgb(97,18,50); -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: -fx-font-family;" text="Configurar Asistencia" />
+      <Button layoutX="14.0" layoutY="77.0" mnemonicParsing="false" onAction="#goConfigAsis" prefHeight="30.0" prefWidth="164.0" style="-fx-background-color: rgb(97,18,50); -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: -fx-font-family;" text="Configurar Asistencia">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/soporte-en-linea.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </AnchorPane>
