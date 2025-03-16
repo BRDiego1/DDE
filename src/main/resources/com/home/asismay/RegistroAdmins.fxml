@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="619.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.RegistroAdminsController">
+<AnchorPane prefHeight="593.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.RegistroAdminsController">
    <children>
       <AnchorPane layoutX="-1.0" prefHeight="68.0" prefWidth="739.0" style="-fx-background-color: linear-gradient(to right, rgb(220, 180, 180), rgb(180, 50, 80), rgb(140, 10, 60), rgb(106,4,48));">
          <children>
@@ -19,7 +28,7 @@
                   <Image url="@../../../image/emblema1.png" />
                </image>
             </ImageView>
-            <Text fill="#0d0d0d" layoutX="199.0" layoutY="50.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Panel de Registro">
+            <Text fill="#0d0d0d" layoutX="193.0" layoutY="51.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Registro Admin">
                <font>
                   <Font size="44.0" />
                </font>
@@ -59,14 +68,14 @@
             <MenuItem mnemonicParsing="false" text="Admin" />
          </items>
       </MenuButton>
-      <TableView fx:id="tablaUsuarios" layoutX="11.0" layoutY="259.0" prefHeight="298.0" prefWidth="717.0">
+      <TableView fx:id="tablaUsuarios" layoutX="11.0" layoutY="251.0" prefHeight="298.0" prefWidth="717.0">
          <columns>
             <TableColumn fx:id="columnaUsuario" prefWidth="150" text="Usuario" />
             <TableColumn fx:id="columnaEmail" prefWidth="250" text="Correo Electrónico" />
             <TableColumn fx:id="columnaPuesto" prefWidth="150" text="Puesto" />
          </columns>
       </TableView>
-      <Button layoutX="11.0" layoutY="579.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Regresar" />
+      <Button layoutX="14.0" layoutY="560.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Regresar" />
       <Button layoutX="615.0" layoutY="95.0" mnemonicParsing="false" onAction="#editardb" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Modificar">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -85,7 +94,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="481.0" layoutY="147.0" mnemonicParsing="false" onAction="#eliminardb" prefHeight="32.0" prefWidth="99.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Eliminar">
+      <Button layoutX="481.0" layoutY="158.0" mnemonicParsing="false" onAction="#eliminardb" prefHeight="32.0" prefWidth="99.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Eliminar">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -94,7 +103,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="615.0" layoutY="147.0" mnemonicParsing="false" onAction="#deletedb" prefHeight="32.0" prefWidth="99.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Delete all">
+      <Button layoutX="615.0" layoutY="158.0" mnemonicParsing="false" onAction="#deletedb" prefHeight="32.0" prefWidth="99.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Delete all">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                <image>

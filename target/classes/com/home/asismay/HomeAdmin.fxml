@@ -56,15 +56,15 @@
                   <Image url="@../../../image/emblema1.png" />
                </image>
             </ImageView>
-            <Text fill="#0d0d0d" layoutX="180.0" layoutY="51.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Panel de Registro">
+            <Text fill="#0d0d0d" layoutX="234.0" layoutY="52.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Panel Admin">
             <font>
                   <Font size="44.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <TextField layoutX="25.0" layoutY="73.0" prefHeight="29.0" prefWidth="187.0" />
-      <Button layoutX="225.0" layoutY="73.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="43.0" style="-fx-background-color: white;">
+      <TextField layoutX="25.0" layoutY="79.0" prefHeight="29.0" prefWidth="187.0" />
+      <Button layoutX="225.0" layoutY="79.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="43.0" style="-fx-background-color: white;">
          <graphic>
             <ImageView fitHeight="21.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>

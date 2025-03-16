@@ -10,14 +10,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="720.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="720.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.HomeController">
    <children>
 
       <!-- Botón para cargar archivo -->
       <Button fx:id="loadFileButton" layoutX="611.0" layoutY="437.0" style="-fx-background-color: rgb(106,4,48); -fx-text-fill: #fcf9f9; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Cargar Excel" textFill="#fcf9f9" />
 
       <!-- Tabla de datos -->
-      <TableView fx:id="table" layoutX="23.0" layoutY="63.0" prefHeight="368.0" prefWidth="674.0" style="-fx-background-color: white; -fx-border-color: rgb(106,4,48); -fx-border-width: 2px;">
+      <TableView fx:id="table" layoutX="23.0" layoutY="77.0" prefHeight="354.0" prefWidth="674.0" style="-fx-background-color: white; -fx-border-color: rgb(106,4,48); -fx-border-width: 2px;">
          <columns>
             <TableColumn fx:id="nombreColumn" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Nombre">
                <cellValueFactory>
@@ -25,7 +25,7 @@
                </cellValueFactory>
             </TableColumn>
 
-            <TableColumn fx:id="asistenciaColumn" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Asistencia">
+            <TableColumn fx:id="asistenciaColumn" maxWidth="0.0" minWidth="-1.0" prefWidth="0.0" text="Asistencia">
                <cellValueFactory>
                   <PropertyValueFactory property="asistencia" />
                </cellValueFactory>
@@ -39,7 +39,7 @@
       <AnchorPane layoutY="-2.0" prefHeight="62.0" prefWidth="720.0" style="-fx-background-color: linear-gradient(to right, rgb(220, 180, 180), rgb(180, 50, 80), rgb(140, 10, 60), rgb(106,4,48));">
          <children>
             <!-- Título -->
-            <Text fill="#0d0d0d" layoutX="179.0" layoutY="49.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Panel de Registro">
+            <Text fill="#0d0d0d" layoutX="169.0" layoutY="52.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Panel de Usuarios">
                <font>
                   <Font size="44.0" />
                </font>

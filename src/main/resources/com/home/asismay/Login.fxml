@@ -10,11 +10,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="267.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.LoginController">
+<AnchorPane prefHeight="444.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.home.asismay.LoginController">
     <children>
-        <AnchorPane prefHeight="70.0" prefWidth="463.0" style="-fx-background-color: linear-gradient(to right, rgb(220, 180, 180), rgb(180, 50, 80), rgb(140, 10, 60), rgb(106,4,48));">
+        <AnchorPane prefHeight="71.0" prefWidth="629.0" style="-fx-background-color: linear-gradient(to right, rgb(220, 180, 180), rgb(180, 50, 80), rgb(140, 10, 60), rgb(106,4,48));">
             <children>
-                <Text fill="#0d0d0d" layoutX="191.0" layoutY="53.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Login">
+                <Text fill="#0d0d0d" layoutX="183.0" layoutY="53.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Iniciar Sesión">
                     <font>
                         <Font size="44.0" />
                     </font>
@@ -24,7 +24,7 @@
                         <Image url="@../../../image/SEMAR_Logo.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="59.0" fitWidth="70.0" layoutX="404.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="59.0" fitWidth="70.0" layoutX="569.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../image/emblema1.png" />
                     </image>
@@ -32,25 +32,44 @@
             </children>
         </AnchorPane>
         <!-- Botón para entrar -->
-        <Button layoutX="401.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleLogin" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Entrar" />
+        <Button layoutX="536.0" layoutY="401.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="28.0" prefWidth="79.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Entrar">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/puerta.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
 
         <!-- Campo de usuario -->
-        <Label layoutX="93.0" layoutY="107.0" text="Usuario:">
+        <Label layoutX="169.0" layoutY="260.0" text="Usuario:">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
-        <TextField fx:id="usernameField" layoutX="194.0" layoutY="107.0" prefHeight="25.0" prefWidth="217.0" />
+        <TextField fx:id="usernameField" layoutX="270.0" layoutY="260.0" prefHeight="25.0" prefWidth="217.0" />
 
         <!-- Campo de contraseña -->
-        <Label layoutX="67.0" layoutY="159.0" text="Contraseña:">
+        <Label layoutX="143.0" layoutY="312.0" text="Contraseña:">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
-        <PasswordField fx:id="passwordField" layoutX="194.0" layoutY="159.0" prefHeight="25.0" prefWidth="217.0" />
+        <PasswordField fx:id="passwordField" layoutX="270.0" layoutY="312.0" prefHeight="25.0" prefWidth="217.0" />
 
         <!-- Botón para salir -->
-        <Button layoutX="14.0" layoutY="234.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Regresar" />
+        <Button layoutX="14.0" layoutY="402.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Regresar">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/volver.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="169.0" fitWidth="179.0" layoutX="230.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/acceso%20(1).png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

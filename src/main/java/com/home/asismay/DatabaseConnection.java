@@ -228,6 +228,7 @@ public class DatabaseConnection {
         try (Connection connection = connect()) {
             if (connection != null) {
                 StringBuilder sql = new StringBuilder("INSERT INTO " + tableName + " (");
+
                 for (String column : columns) {
                     sql.append(column).append(", ");
                 }
@@ -246,7 +247,7 @@ public class DatabaseConnection {
                 sql.delete(sql.length() - 2, sql.length()); // Eliminar la última coma y espacio
 
                 Statement stmt = connection.createStatement();
-                stmt.executeUpdate(sql.toString());
+                stmt.executeUpdate(sql.toString());  // ← ERROR AQUÍ
                 System.out.println("Datos insertados exitosamente en la tabla '" + tableName + "'");
             }
         } catch (SQLException e) {
@@ -256,8 +257,12 @@ public class DatabaseConnection {
 
 
 
+
+
+
     public static void main(String[] args) {
         createDatabase();
         createTable();
     }
+
 }

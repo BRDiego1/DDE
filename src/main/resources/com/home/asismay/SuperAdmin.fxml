@@ -23,28 +23,8 @@
          </items>
       </ComboBox>
 
-      <Button layoutX="502.0" layoutY="77.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Eliminar" textFill="WHITE">
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../image/eliminar.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-
       <!-- TableView for displaying data from Excel -->
       <TableView fx:id="tableView" layoutX="10.0" layoutY="129.0" prefHeight="369.0" prefWidth="717.0" />
-
-      <Button layoutX="616.0" layoutY="77.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="107.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: -fx-font-family;" text="Actualizar" textFill="WHITE">
-         <graphic>
-            <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../image/rotacion.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
 
       <Button layoutX="626.0" layoutY="507.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Imprimir" textFill="WHITE">
          <graphic>
@@ -68,7 +48,7 @@
                   <Image url="@../../../image/emblema1.png" />
                </image>
             </ImageView>
-            <Text fill="#0d0d0d" layoutX="206.0" layoutY="50.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Panel de Registro">
+            <Text fill="#0d0d0d" layoutX="181.0" layoutY="48.0" style="-fx-font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; -fx-font-size: 48px; -fx-font-weight: bold;" text="Panel SuperAdmin">
                <font>
                   <Font size="44.0" />
                </font>
@@ -94,7 +74,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="loadFileButton1" layoutX="348.0" layoutY="507.0" prefHeight="29.0" prefWidth="126.0" style="-fx-background-color: rgb(106,4,48); -fx-text-fill: #fcf9f9; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Load Database" textFill="#fcf9f9">
+      <Button fx:id="loadFileButton1" layoutX="598.0" layoutY="78.0" prefHeight="29.0" prefWidth="126.0" style="-fx-background-color: rgb(106,4,48); -fx-text-fill: #fcf9f9; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Load Database" textFill="#fcf9f9">
          <graphic>
             <ImageView fitHeight="21.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -102,7 +82,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="14.0" layoutY="77.0" mnemonicParsing="false" onAction="#goConfigAsis" prefHeight="30.0" prefWidth="164.0" style="-fx-background-color: rgb(97,18,50); -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: -fx-font-family;" text="Configurar Asistencia">
+      <Button layoutX="14.0" layoutY="77.0" mnemonicParsing="false" onAction="#goConfigAsis" prefHeight="29.0" prefWidth="164.0" style="-fx-background-color: rgb(97,18,50); -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: -fx-font-family;" text="Configurar Asistencia">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -110,5 +90,14 @@
                </image>
             </ImageView>
          </graphic></Button>
+      <Button fx:id="loadFileButton2" layoutX="355.0" layoutY="508.0" prefHeight="29.0" prefWidth="120.0" style="-fx-background-color: rgb(97,18,50); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: 'Agency FB';" text="Eliminar Excel">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/borrar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
