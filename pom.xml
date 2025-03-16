@@ -15,7 +15,7 @@
   </properties>
 
   <dependencies>
-    <!-- Dependencias de JavaFX -->
+    <!-- Dependencias de JavaFX hola a todos-->
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
